@@ -1,19 +1,25 @@
 package jp.yattom.mvc_kata;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Encounter {
+    private Set<Creature> participants;
 
     public Encounter() {
-        // TODO Auto-generated constructor stub
+        participants = new HashSet<Creature>();
     }
 
     public void addParticipant(Creature creature) {
-        // TODO Auto-generated method stub
-        
+        participants.add(creature);
     }
 
     public void engage() {
-        // TODO Auto-generated method stub
-        
+        for(Creature c : participants) {
+            Set<Creature> opponents = new HashSet<Creature>(participants);
+            opponents.remove(c);
+            c.startFighting(opponents);
+        }
     }
 
 }

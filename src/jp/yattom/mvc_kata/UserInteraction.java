@@ -1,7 +1,9 @@
 package jp.yattom.mvc_kata;
 
+import java.util.Collection;
+
 public interface UserInteraction {
 
-    void notifyEncount(String string);
+    void notifyEncount(Collection<Creature> opponents);
 
 }

@@ -2,6 +2,8 @@ package jp.yattom.mvc_kata;
 
 import static org.junit.Assert.*;
 
+import java.util.HashSet;
+
 import static org.easymock.EasyMock.*;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,11 +20,14 @@ public class EncounterTest {
 
     @Test
     public void 敵が現れる() {
-        ui.notifyEncount("スライム");
+        Creature opponent = new Slime();
+        HashSet<Creature> expectedOpponents = new HashSet<Creature>();
+        expectedOpponents.add(opponent);
+        ui.notifyEncount(eq(expectedOpponents));
         replay(ui);
-        
+
         Encounter encounter = new Encounter();
-        encounter.addParticipant(new Slime());
+        encounter.addParticipant(opponent);
         encounter.addParticipant(pc);
         encounter.engage();
         verify(ui);
