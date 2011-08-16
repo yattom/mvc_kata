@@ -17,4 +17,9 @@ public class AttackAction implements Action {
         AttackAction oa = (AttackAction)o;
         return actor.equals(oa.actor) && target.equals(oa.target);
     }
+
+    public void execute() {
+        // TODO Auto-generated method stub
+        
+    }
 }

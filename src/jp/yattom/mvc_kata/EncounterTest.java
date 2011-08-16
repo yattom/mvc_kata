@@ -38,9 +38,11 @@ public class EncounterTest {
     @Test
     public void プレイヤーが攻撃する() {
         ui.notifyEncount(anyObject(Collection.class));
-        AttackAction expectedAction = new AttackAction(pc, opponent);
-        expect(ui.requestActionInEncounter()).andReturn(expectedAction);
+        AttackAction attack = createMock(AttackAction.class);
+        attack.execute();
+        expect(ui.requestActionInEncounter()).andReturn(attack);
         replay(ui);
+        replay(attack);
 
         Encounter encounter = new Encounter();
         encounter.addParticipant(pc);
@@ -48,5 +50,6 @@ public class EncounterTest {
         encounter.engage();
         encounter.takeTurnFor(pc);
         verify(ui);
+        verify(attack);
     }
 }
