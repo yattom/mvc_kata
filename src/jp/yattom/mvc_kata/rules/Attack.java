@@ -8,5 +8,4 @@ public class Attack {
         int damage = actor.getDamage();
         target.reduceHP(damage);
     }
-
 }
