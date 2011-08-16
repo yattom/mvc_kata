@@ -2,7 +2,12 @@ package jp.yattom.mvc_kata;
 
 public class Slime implements Creature {
     private CreatureMind mind = new DumbMind();
+    private int hp;
 
+    public Slime() {
+        hp = 3;
+    }
+    
     @Override
     public Action takeEngagementAction() {
         // TODO Auto-generated method stub
@@ -16,6 +21,10 @@ public class Slime implements Creature {
 
     @Override
     public void reduceHP(int damage) {
+        hp -= damage;
+        if(hp < 0) {
+            hp = 0;
+        }
     }
 
     @Override
@@ -25,8 +34,11 @@ public class Slime implements Creature {
 
     @Override
     public boolean isAlive() {
-        // TODO Auto-generated method stub
-        return false;
+        return hp > 0;
+    }
+
+    public int getHP() {
+        return hp;
     }
 
 }
