@@ -11,25 +11,25 @@ import org.junit.Test;
 public class EncounterTest {
     private UserInteraction ui;
     private PlayerCharacter pc;
-    private Creature opponent;
+    private Creature foe;
 
     @Before
     public void setUp() {
         ui = createMock(UserInteraction.class);
         pc = new PlayerCharacter(ui);
-        opponent = new Slime();
+        foe = new Slime();
     }
 
     @Test
     public void 敵が現れる() {
-        HashSet<Creature> expectedOpponents = new HashSet<Creature>();
-        expectedOpponents.add(opponent);
-        ui.notifyEncount(eq(expectedOpponents));
+        HashSet<Creature> expectedFoes = new HashSet<Creature>();
+        expectedFoes.add(foe);
+        ui.notifyEncount(eq(expectedFoes));
         replay(ui);
 
         Encounter encounter = new Encounter();
         encounter.addParticipant(pc);
-        encounter.addParticipant(opponent);
+        encounter.addParticipant(foe);
         encounter.engage();
         verify(ui);
     }
@@ -46,7 +46,7 @@ public class EncounterTest {
 
         Encounter encounter = new Encounter();
         encounter.addParticipant(pc);
-        encounter.addParticipant(opponent);
+        encounter.addParticipant(foe);
         encounter.engage();
         encounter.takeTurnFor(pc);
         verify(ui);
