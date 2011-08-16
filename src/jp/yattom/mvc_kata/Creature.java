@@ -6,4 +6,6 @@ public interface Creature {
 
     void startFighting(Set<Creature> opponents);
 
+    Action takeEngagementAction();
+
 }

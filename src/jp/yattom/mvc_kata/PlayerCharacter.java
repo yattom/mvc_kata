@@ -14,4 +14,9 @@ public class PlayerCharacter implements Creature {
         ui.notifyEncount(opponents);
     }
 
+    @Override
+    public Action takeEngagementAction() {
+        return ui.requestActionInEncounter();
+    }
+
 }

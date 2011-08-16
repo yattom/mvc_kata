@@ -22,4 +22,8 @@ public class Encounter {
         }
     }
 
+    public void takeTurnFor(Creature actor) {
+        Action action = actor.takeEngagementAction();
+    }
+
 }

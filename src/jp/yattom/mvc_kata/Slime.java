@@ -7,7 +7,13 @@ public class Slime implements Creature {
     @Override
     public void startFighting(Set<Creature> opponents) {
         // TODO Auto-generated method stub
-        
+
+    }
+
+    @Override
+    public Action takeEngagementAction() {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }
