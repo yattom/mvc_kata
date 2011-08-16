@@ -17,8 +17,8 @@ public class EncounterTest {
     }
 
     @Test
-    public void “G‚ªŒ»‚ê‚é() {
-        ui.notifyEncount("ƒXƒ‰ƒCƒ€");
+    public void æ•µãŒç¾ã‚Œã‚‹() {
+        ui.notifyEncount("ã‚¹ãƒ©ã‚¤ãƒ ");
         replay(ui);
         
         Encounter encounter = new Encounter();
