@@ -12,4 +12,8 @@ public class Slime extends AbstractCreature {
         return 2;
     }
 
+    @Override
+    public String getName() {
+        return "スライム";
+    }
 }

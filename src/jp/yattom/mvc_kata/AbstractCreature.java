@@ -1,6 +1,6 @@
 package jp.yattom.mvc_kata;
 
-public class AbstractCreature implements Creature {
+public abstract class AbstractCreature implements Creature {
     private CreatureMind mind;
     private int hp;
 

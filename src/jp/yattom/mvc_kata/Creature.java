@@ -12,4 +12,6 @@ public interface Creature {
 
     boolean isAlive();
 
+    Object getName();
+
 }
