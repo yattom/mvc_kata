@@ -9,17 +9,30 @@ import java.util.Collection;
 import jp.yattom.mvc_kata.Action;
 import jp.yattom.mvc_kata.AttackAction;
 import jp.yattom.mvc_kata.Creature;
+import jp.yattom.mvc_kata.Encounter;
+import jp.yattom.mvc_kata.EncounterFactory;
+import jp.yattom.mvc_kata.PlayerCharacter;
 import jp.yattom.mvc_kata.UserInteraction;
 
 public class CUI implements UserInteraction {
     private PrintStream out;
     private BufferedReader in;
     private Collection<Creature> opponents;
-    private Creature pc;
+    private PlayerCharacter pc;
+
+    public static void main(String[] args) {
+        CUI cui = new CUI();
+        Encounter encounter = new EncounterFactory(cui.pc).create();
+        encounter.engage();
+        while (!encounter.isConcluded()) {
+            encounter.takeTurn();
+        }
+    }
 
     public CUI() {
         out = System.out;
         in = new BufferedReader(new InputStreamReader(System.in));
+        pc = new PlayerCharacter(this);
     }
 
     @Override
