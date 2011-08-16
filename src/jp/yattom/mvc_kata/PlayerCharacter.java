@@ -1,18 +1,11 @@
 package jp.yattom.mvc_kata;
 
-import java.util.Set;
-
 public class PlayerCharacter implements Creature {
 
     private UserInteraction ui;
 
     public PlayerCharacter(UserInteraction ui) {
         this.ui = ui;
-    }
-
-    @Override
-    public void startFighting(Set<Creature> opponents) {
-        ui.notifyEncount(opponents);
     }
 
     @Override
@@ -29,6 +22,11 @@ public class PlayerCharacter implements Creature {
     public void reduceHP(int damage) {
         // TODO Auto-generated method stub
 
+    }
+
+    @Override
+    public CreatureMind tell() {
+        return ui;
     }
 
 }

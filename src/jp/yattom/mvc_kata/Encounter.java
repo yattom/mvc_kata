@@ -18,7 +18,7 @@ public class Encounter {
         for(Creature c : participants) {
             Set<Creature> opponents = new HashSet<Creature>(participants);
             opponents.remove(c);
-            c.startFighting(opponents);
+            c.tell().notifyEncount(opponents);
         }
     }
 
