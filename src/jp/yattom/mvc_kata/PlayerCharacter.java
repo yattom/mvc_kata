@@ -1,37 +1,14 @@
 package jp.yattom.mvc_kata;
 
-public class PlayerCharacter implements Creature {
-
-    private UserInteraction ui;
+public class PlayerCharacter extends AbstractCreature {
 
     public PlayerCharacter(UserInteraction ui) {
-        this.ui = ui;
-    }
-
-    @Override
-    public Action takeEngagementAction() {
-        return ui.requestActionInEncounter();
+        super(10);
+        setMind(ui);
     }
 
     @Override
     public int getDamage() {
         return 3;
     }
-
-    @Override
-    public void reduceHP(int damage) {
-        // TODO Auto-generated method stub
-    }
-
-    @Override
-    public CreatureMind tell() {
-        return ui;
-    }
-
-    @Override
-    public boolean isAlive() {
-        // TODO Auto-generated method stub
-        return true;
-    }
-
 }
