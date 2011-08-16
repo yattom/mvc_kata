@@ -20,4 +20,16 @@ public class DumbMind implements CreatureMind {
 
     }
 
+    @Override
+    public void notifyKill(Creature target) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void notifyDead() {
+        // TODO Auto-generated method stub
+
+    }
+
 }

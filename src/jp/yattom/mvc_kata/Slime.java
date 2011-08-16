@@ -16,13 +16,17 @@ public class Slime implements Creature {
 
     @Override
     public void reduceHP(int damage) {
-        // TODO Auto-generated method stub
-
     }
 
     @Override
     public CreatureMind tell() {
         return mind;
+    }
+
+    @Override
+    public boolean isAlive() {
+        // TODO Auto-generated method stub
+        return false;
     }
 
 }

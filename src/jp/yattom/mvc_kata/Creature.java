@@ -10,4 +10,6 @@ public interface Creature {
 
     CreatureMind tell();
 
+    boolean isAlive();
+
 }

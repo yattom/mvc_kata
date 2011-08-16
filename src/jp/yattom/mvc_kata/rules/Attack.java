@@ -9,5 +9,10 @@ public class Attack {
         target.reduceHP(damage);
         actor.tell().notifyAttacking(target, damage);
         target.tell().notifyHit(actor, damage);
+
+        if (!target.isAlive()) {
+            actor.tell().notifyKill(target);
+            target.tell().notifyDead();
+        }
     }
 }

@@ -10,4 +10,8 @@ public interface CreatureMind {
 
     void notifyHit(Creature actor, int i);
 
+    void notifyKill(Creature target);
+
+    void notifyDead();
+
 }
