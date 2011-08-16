@@ -1,7 +1,7 @@
 package jp.yattom.mvc_kata;
 
 public class Slime implements Creature {
-    private CreatureMind mind = new DumbMind();
+    private CreatureMind mind = new DumbMind(this);
     private int hp;
 
     public Slime() {
@@ -10,8 +10,7 @@ public class Slime implements Creature {
     
     @Override
     public Action takeEngagementAction() {
-        // TODO Auto-generated method stub
-        return null;
+        return mind.requestActionInEncounter();
     }
 
     @Override

@@ -52,4 +52,19 @@ public class EncounterTest {
         verify(ui);
         verify(attack);
     }
+
+    @SuppressWarnings("unchecked")
+    @Test
+    public void モンスターが反撃する() {
+        ui.notifyEncount(anyObject(Collection.class));
+        ui.notifyHit(foe, 2);
+        replay(ui);
+
+        Encounter encounter = new Encounter();
+        encounter.addParticipant(pc);
+        encounter.addParticipant(foe);
+        encounter.engage();
+        encounter.takeTurnFor(foe);
+        verify(ui);
+    }
 }

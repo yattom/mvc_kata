@@ -14,4 +14,6 @@ public interface CreatureMind {
 
     void notifyDead();
 
+    Action requestActionInEncounter();
+
 }

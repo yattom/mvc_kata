@@ -31,7 +31,7 @@ public class PlayerCharacter implements Creature {
     @Override
     public boolean isAlive() {
         // TODO Auto-generated method stub
-        return false;
+        return true;
     }
 
 }

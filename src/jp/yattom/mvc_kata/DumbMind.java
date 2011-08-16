@@ -4,8 +4,16 @@ import java.util.Collection;
 
 public class DumbMind implements CreatureMind {
 
+    private Collection<Creature> opponents;
+    private Creature actor;
+    
+    public DumbMind(Creature actor) {
+        this.actor = actor;
+    }
+
     @Override
     public void notifyEncount(Collection<Creature> opponents) {
+        this.opponents = opponents;
     }
 
     @Override
@@ -30,6 +38,11 @@ public class DumbMind implements CreatureMind {
     public void notifyDead() {
         // TODO Auto-generated method stub
 
+    }
+
+    @Override
+    public Action requestActionInEncounter() {
+        return new AttackAction(actor, opponents.iterator().next());
     }
 
 }
