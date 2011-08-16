@@ -1,5 +1,7 @@
 package jp.yattom.mvc_kata;
 
+import jp.yattom.mvc_kata.rules.Attack;
+
 public class AttackAction implements Action {
     private Creature target;
     private Creature actor;
@@ -19,7 +21,6 @@ public class AttackAction implements Action {
     }
 
     public void execute() {
-        // TODO Auto-generated method stub
-        
+        Attack.execute(actor, target);
     }
 }

@@ -8,4 +8,8 @@ public interface Creature {
 
     Action takeEngagementAction();
 
+    int getDamage();
+
+    void reduceHP(int damage);
+
 }

@@ -16,4 +16,15 @@ public class Slime implements Creature {
         return null;
     }
 
+    @Override
+    public int getDamage() {
+        return 2;
+    }
+
+    @Override
+    public void reduceHP(int damage) {
+        // TODO Auto-generated method stub
+        
+    }
+
 }
